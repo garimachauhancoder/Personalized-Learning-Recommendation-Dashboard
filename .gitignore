@@ -1,1 +1,5 @@
 .vscode/
+dashboard_venv/
+.env
+__pycache__/
+*.pyc
