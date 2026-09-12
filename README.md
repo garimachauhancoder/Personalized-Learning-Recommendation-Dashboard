@@ -1,0 +1,146 @@
+# Personalized Learning Recommendation Dashboard
+
+An intelligent learning analytics and recommendation platform designed to understand a learner's performance, identify strengths and weaknesses, track learning progress, and provide personalized recommendations for the next learning step.
+
+The system follows an adaptive learning cycle:
+
+**Learn → Practice → Assess → Analyze → Recommend → Improve**
+
+## 📌 Project Overview
+
+Traditional learning platforms generally provide the same content to every learner. However, different learners have different knowledge levels, learning speeds, weak areas, and study patterns.
+
+The **Personalized Learning Recommendation Dashboard** aims to solve this problem by collecting learning activity and assessment data, analyzing learner performance, and generating personalized learning insights and recommendations.
+
+The project combines:
+
+* Learning activity tracking
+* Assessment and performance analysis
+* Learner profiling
+* Strength and weakness identification
+* Personalized learning recommendations
+* Progress visualization
+* Data-driven learning insights
+
+## 🎯 Objectives
+
+* Track learner learning sessions and activities.
+* Store assessment scores, attempts, and performance history.
+* Identify topics where the learner performs well or struggles.
+* Analyze learning behavior and progress over time.
+* Recommend suitable topics and learning resources.
+* Build a foundation for future machine learning-based personalization.
+* Provide an interactive dashboard for monitoring learning progress.
+
+## ✨ Planned Features
+
+### 1. Learner Profile Management
+
+* Create and manage learner profiles.
+* Store basic learning-related information.
+* Maintain individual learning history.
+
+### 2. Learning Activity Tracking
+
+Record details such as:
+
+* Topic studied
+* Study duration
+* Number of attempts
+* Questions attempted
+* Difficulty level
+* Learning timestamp
+* Session information
+
+### 3. Assessment Tracking
+
+Store and analyze:
+
+* Quiz scores
+* Assessment results
+* Correct and incorrect answers
+* Number of attempts
+* Topic-wise performance
+
+### 4. Performance Analytics
+
+Analyze learner data to identify:
+
+* Strong topics
+* Weak topics
+* Frequently attempted topics
+* Improvement trends
+* Learning consistency
+* Performance over time
+
+### 5. Personalized Recommendations
+
+The system will recommend:
+
+* Topics requiring revision
+* Next topics to study
+* Practice questions
+* Learning resources
+* Suitable difficulty levels
+
+Recommendations will be based on learner performance and learning behavior rather than generic suggestions.
+
+### 6. Interactive Dashboard
+
+The dashboard will display:
+
+* Overall learning progress
+* Topic-wise scores
+* Strengths and weaknesses
+* Assessment history
+* Study activity
+* Personalized recommendations
+
+## 🏗️ System Architecture
+
+```text
+Learner
+   │
+   ▼
+Learning Activities / Assessments
+   │
+   ▼
+PostgreSQL Database
+   │
+   ▼
+Data Processing & Analytics
+   │
+   ▼
+Learner Performance Profile
+   │
+   ▼
+Recommendation Engine
+   │
+   ▼
+Personalized Learning Dashboard
+```
+
+## 🗄️ Database Design
+
+The project uses PostgreSQL for structured storage of learner and learning-related data.
+
+### Main Tables
+
+* `users`
+  Stores learner information.
+
+* `topics`
+  Stores learning topics and topic details.
+
+* `learning_sessions`
+  Stores individual study sessions.
+
+* `assessments`
+  Stores assessment and quiz performance.
+
+* `learning_events`
+  Stores detailed learner activity events for analytics and future machine learning.
+
+The database is designed to support future analytics and recommendation models.
+
+## 🛠️
