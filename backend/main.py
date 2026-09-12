@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from sqlalchemy import text
 from backend.database import engine
+from backend.routes.users import router as users_router
+
 
 app = FastAPI(title="Personalised Learning Recommendation System")
 
