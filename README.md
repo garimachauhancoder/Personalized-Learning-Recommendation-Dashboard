@@ -143,4 +143,112 @@ The project uses PostgreSQL for structured storage of learner and learning-relat
 
 The database is designed to support future analytics and recommendation models.
 
-## 🛠️
+## 🛠️ Tech Stack
+
+### Backend
+
+* Python
+* FastAPI
+* SQLAlchemy
+* Pydantic
+
+### Database
+
+* PostgreSQL
+* pgAdmin 4
+
+### Data Processing & Analytics
+
+* Pandas
+* NumPy
+* Scikit-learn
+
+### Dashboard
+
+* Streamlit
+
+### Development Tools
+
+* Git
+* GitHub
+* VS Code
+
+## 📂 Project Structure
+
+```text
+Personalized-Learning-Recommendation-Dashboard/
+│
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models/
+│   ├── schemas/
+│   └── routes/
+│
+├── analytics/
+│   └── analysis.py
+│
+├── dashboard/
+│   └── app.py
+│
+├── database/
+│   └── schema.sql
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+*Project structure may evolve as additional modules are implemented.*
+
+## 🚀 Current Development Status
+
+### Completed / Initial Setup
+
+* Project repository initialized.
+* PostgreSQL database configured.
+* Database schema designed.
+* Core learning-related tables created.
+* Foreign-key relationships planned.
+* Database connectivity testing initiated.
+
+### Currently Building
+
+* Backend database integration
+* SQLAlchemy models
+* APIs for learner and learning activity data
+* Learning session and assessment storage
+
+### Future Development
+
+* Performance analytics
+* Learner profiling
+* Recommendation engine
+* Interactive dashboard
+* Machine learning-based personalization
+* Recommendation effectiveness tracking
+
+## 🔮 Future Enhancements
+
+* Topic clustering using machine learning.
+* Content-based recommendation using semantic similarity.
+* Difficulty-aware recommendations.
+* Predictive learner performance analysis.
+* Knowledge-gap detection.
+* Recommendation effectiveness evaluation.
+* Adaptive learning paths.
+* Explainable recommendations.
+
+## 💡 Expected Impact
+
+The platform aims to help learners understand **what they know, what they need to improve, and what they should learn next**, while providing educators or mentors with meaningful insights into learner progress.
+
+## 👩‍💻 Author
+
+**Garima Chauhan**
+
+Developed as a personal AI/ML and learning analytics project.
+
+## 📄 License
+
+This project is intended for educational and development purposes.
