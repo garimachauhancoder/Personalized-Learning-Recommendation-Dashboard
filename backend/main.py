@@ -19,3 +19,5 @@ def test_database():
         return {
             "database_connected": result.scalar() == 1
         }
+
+app.include_router(users_router)
