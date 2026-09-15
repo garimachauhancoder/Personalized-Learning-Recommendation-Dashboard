@@ -3,7 +3,7 @@ from datetime import datetime
 
 class LearningSessionCreate(BaseModel):
     user_id: int
-    topic_int:int
+    topic_id:int
     start_time: datetime | None = None
     end_time: datetime | None = None
     duration_minutes: int
