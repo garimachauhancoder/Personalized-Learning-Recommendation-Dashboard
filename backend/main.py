@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from sqlalchemy import text
 from backend.database import engine
 from backend.routes.users import router as users_router
+from backend.routes.topics import router as topics_router
 
 
 app = FastAPI(title="Personalised Learning Recommendation System")
@@ -21,3 +22,4 @@ def test_database():
         }
 
 app.include_router(users_router)
+app.include_router(topics_router)
