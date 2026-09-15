@@ -16,3 +16,16 @@ class Topic(Base):
     name = Column(String(100), nullable=False)
     category = Column(String(100))
     description = Column(String)
+
+class LearningSession(Base):
+    __tablename__ = "learning_sessions"
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, nullable=False)
+    topic_id = Column(Integer, nullable=False)
+
+    start_time = Column(DateTime)
+    end_time = Column(DateTime)
+
+    duration_minutes = Column(Integer)
+    resource_type = Column(String(50))
+    resource_id = Column(Integer)
