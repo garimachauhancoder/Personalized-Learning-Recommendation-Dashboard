@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime
+from sqlalchemy import Column, Integer, String, Float, DateTime, JSON
 from sqlalchemy.sql import func
 from backend.database import Base
+from sqlalchemy.dialects.postgresql import JSONB
 
 class User(Base):
     __tablename__ = "users"
@@ -44,3 +45,15 @@ class Assessment(Base):
         DateTime,
         server_default = func.now()
     )
+
+class LearningEvent(Base):
+    __tablename__ = "learning_events"
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer)
+    topic_id = Column(Integer)
+    event_type = Column(String(100))
+    timestamp = Column(
+        DateTime,
+        server_default=func.now()
+    )
+    metadata = Column(JSON)
