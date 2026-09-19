@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, Float
 from sqlalchemy.sql import func
 from backend.database import Base
 
@@ -29,3 +29,18 @@ class LearningSession(Base):
     duration_minutes = Column(Integer)
     resource_type = Column(String(50))
     resource_id = Column(Integer)
+
+class Assessment(Base):
+    __tablename__ = "assessments"
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, nullable=False)
+    topic_id = Column(Integer, nullable=False)
+    score = Column(Float)
+    total_questions = Column(Integer)
+    correct_answers = Column(Integer)
+    time_taken_minutes = Column(Integer)
+    difficulty = Column(String(50))
+    attempted_at = Column(
+        DateTime,
+        server_default = func.now()
+    )
