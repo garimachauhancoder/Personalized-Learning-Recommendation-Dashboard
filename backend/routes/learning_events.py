@@ -19,13 +19,13 @@ def get_db():
 @router.post("/")
 def create_learning_event(
     event: LearningEventCreate,
-    db: session = Dependss(get_db)
+    db: session = Depends(get_db)
 ):
     new_event = LearningEvent(
         user_id=event.user_id,
         topic_id=event.topic_id,
         event_type=event.event_type,
-        metadata=event.metadata
+        event_metadata=event.metadata
     )
 
     db.add(new_event)
