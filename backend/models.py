@@ -56,4 +56,4 @@ class LearningEvent(Base):
         DateTime,
         server_default=func.now()
     )
-    metadata = Column(JSON)
+    event_metadata = Column(JSONB, name="metadata")
