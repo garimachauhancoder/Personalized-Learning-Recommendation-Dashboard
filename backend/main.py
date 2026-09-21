@@ -6,6 +6,7 @@ from backend.routes.topics import router as topics_router
 from backend.routes.learning_sessions import router as learning_sessions_router
 from backend.routes.assessments import router as assessments_router
 from backend.routes.learning_events import router as learning_events_router
+from backend.routes.analytics import router as analytics_router
 
 app = FastAPI(title="Personalised Learning Recommendation System")
 
@@ -28,3 +29,4 @@ app.include_router(topics_router)
 app.include_router(learning_sessions_router)
 app.include_router(assessments_router)
 app.include_router(learning_events_router)
+app.include_router(analytics_router)
