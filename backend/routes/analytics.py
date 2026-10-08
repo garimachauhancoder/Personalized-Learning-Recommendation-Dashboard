@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from backend.database import SessionLocal
-from backend.models import Assessment
+from backend.models import Assessment, Topic
 
 router = APIRouter(
     prefix="/analytics",
@@ -37,3 +37,30 @@ def get_user_analytics(
         "average_score":average_score,
         "assessment_count":assessment_count
     }
+
+@router.get("/user/{user_id}/topics")
+def get_topic_performance(
+    user_id: int,
+    db: Session = Depends(get_db)
+):
+    results = (
+        db.query(
+            Assessment.topic_id,
+            Topic.name,
+            func.avg(Assessment.score).label("average_score"),
+            func.count(Assessment.id).label("assessment_count")
+        )
+        .join(Topic, Assessment.topic_id == Topic.id)
+        .filter(Assessment.user_id == user_id)
+        .group_by(Assessment.topic_id, Topic.name)
+        .all()
+    )
+    return [
+        {
+            "topic_id": topic_id,
+            "topic": topic_name,
+            "average_score": round(float(average_score), 2),
+            "assessment_count": assessment_count
+        }
+        for topic_id, topic_name, average_score, assessment_count in results
+    ]
