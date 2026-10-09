@@ -1,7 +1,12 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+# from backend.database import get_db
 from backend.schemas.learning_session import LearningSessionCreate
 from backend.models import LearningSession
+from backend.schemas.learning_session import (
+    LearningSessionCreate,
+    LearningSessionResponse
+)
 from backend.database import SessionLocal
 
 router = APIRouter(
@@ -16,7 +21,7 @@ def get_db():
     finally:
         db.close()
 
-@router.post("/")
+@router.post("/", response_model=LearningSessionResponse)
 def create_learning_session(
     session: LearningSessionCreate,
     db: Session = Depends(get_db)
